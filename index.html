@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA CODE - Proyecto Web</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="contenedor">
+            <h1>GRUPO 3</h1>
+            <p>Equipo de desarrollo web enfocado en crear soluciones digitales modernas, funcionales y atractivas.</p>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <ul class="nav-lista">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="valeria.html">Valeria</a></li>
+            <li><a href="agustina.html">Agustina</a></li>
+            <li><a href="matias.html">Matías</a></li>
+            <li><a href="luis.html">Luis</a></li>
+            <li><a href="bitacora.html">Bitácora</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- PRESENTACIÓN DEL EQUIPO -->
+        <section class="presentacion">
+            <div class="contenedor">
+                <h2>Sobre el equipo</h2>
+                <p>
+                    El Grupo 3 es un equipo de estudiantes de desarrollo web comprometidos con el aprendizaje,
+                    la innovación y la creación de soluciones digitales. Nuestro objetivo es aplicar los conocimientos
+                    adquiridos en el desarrollo de proyectos funcionales, creativos y adaptables.
+                </p>
+            </div>
+        </section>
+
+        <!-- INTEGRANTES -->
+        <section class="integrantes">
+            <div class="contenedor">
+                <h2>Integrantes</h2>
+
+                <div class="grid-integrantes">
+
+                    <div class="card">
+                        <h3>Valeria Natucci</h3>
+                        <a href="valeria.html">Ver perfil</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Agustina Brandemann</h3>
+                        <a href="agustina.html">Ver perfil</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Matías Gonzalez</h3>
+                        <a href="matias.html">Ver perfil</a>
+                    </div>
+
+                    <div class="card">
+                        <h3>Luis Specterman</h3>
+                        <a href="luis.html">Ver perfil</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACCIÓN JS (OBLIGATORIA) -->
+        <section class="interaccion">
+            <div class="contenedor">
+                <h2>Interacción</h2>
+                <p>Hacé clic en el botón para ver un mensaje del equipo.</p>
+
+                <button onclick="mostrarMensaje()">Click aquí</button>
+
+                <p id="mensaje"></p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>IFTS N°29 - 2° Año - Front End</p>
+        <p>Equipo: GRUPO 3</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

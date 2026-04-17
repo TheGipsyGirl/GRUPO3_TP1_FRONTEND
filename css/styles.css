@@ -1,0 +1,168 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eaefd4;
+    color: #2f2f2f;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #5f7c8a, #7fa6b8);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+/* NAV */
+.nav {
+    background-color: #3f4d56;
+    padding: 1rem;
+}
+
+.nav-lista {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-lista a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-lista a:hover {
+    color: #b8e3f4;
+}
+
+/* SECCIONES */
+section {
+    padding: 3rem 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* INTEGRANTES */
+.grid-integrantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #5f7c8a;
+}
+
+/* PERFIL */
+.perfil {
+    text-align: center;
+}
+
+.foto {
+    width: 180px;
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+
+/* LISTAS */
+ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* BOTONES */
+button {
+    background: #5f7c8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3f4d56;
+}
+
+/* BITÁCORA */
+.bitacora p {
+    margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.footer {
+    background: #3f4d56;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* RESPONSIVE */
+
+/* 📱 móviles */
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-lista {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* 📲 tablets */
+@media (max-width: 900px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 💻 escritorio grande */
+@media (min-width: 1200px) {
+    .contenedor {
+        max-width: 1200px;
+    }
+}
