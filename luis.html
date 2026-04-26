@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio Personal - v3.0 | Dev_IFTS29</title>
+    <link rel="stylesheet" href="css/styles_luis.css" />
+    <!-- Google Fonts: SYNE para títulos y DM SANS para cuerpo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- =============================================
+       HEADER: Encabezado principal con logo y nombre
+       Mejora futura: Agregar modo oscuro/claro 
+  ============================================= -->
+    <header class="header">
+      <div class="header__contenido">
+        <div class="header__logo">
+          <span class="logo-bracket">&lt;</span>Dev_IFTS29<span class="logo-bracket"
+            >/&gt;</span
+          >
+        </div>
+
+        <!-- =============================================
+           NAV: Barra de navegacion con 5 enlaces internos
+           Mejora futura: convertir en menu hamburguesa para mobile
+        ============================================= -->
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+            <li><a href="#tarjetas" class="nav__link">Proyectos</a></li>
+            <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+            <li><a href="#peliculas" class="nav__link">Peliculas</a></li>
+            <li><a href="#musica"    class="nav__link">Musica</a></li>
+            <li><a href="#contacto"  class="nav__link">Contacto</a></li>
+            <li><a href="index.html"    class="nav__link">Principal</a></li>
+          
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN: Contenido principal del portafolio -->
+    <main class="main">
+      <!-- =============================================
+         SECCION: Presentacion personal (id="sobre-mi")
+         Mejora futura: Agregar animacion de entrada 
+        ============================================= -->
+      <section id="sobre-mi" class="section sobre-mi">
+        <div class="sobre-mi__content">
+          <div class="sobre-mi__text">
+            <p class="section__tag">// Hola, mundo</p>
+            <h1 class="sobre-mi__title">
+              Soy <span class="highlight">SPECTERMAN LUIS OMAR</span>
+            </h1>
+            
+            
+           <p class="sobre-mi__datos">
+               San Andres, Buenos Aires <br>
+               64 años
+           </p> 
+            
+            <p class="sobre-mi__desc">
+              Estudiante apasionado en programacion , en gran parte autodidacta ,
+              en proceso de convertirme en un desarrollador mas tecnico y profesional.
+              Me gustaria poder llegar a construir interfaces
+              limpias, accesibles y funcionales que resuelvan problemas reales.
+              Mi misión es crecer cada día, aprender de la comunidad , compañeros de curso 
+              y aportar valor con cada línea de codigo que escribo.
+            </p>
+            <a href="#contacto" class="btn btn--primary">Contactame</a>
+          </div>
+
+<!--           <div class="sobre-mi__img-wrap">
+            <img
+              src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Dev29&backgroundColor=1a1a2e"
+              alt="Avatar generado con IA representando a Dev_IFTS29 (Yo)"
+              class="sobre-mi__img"
+            />
+          </div>
+ -->
+          <div class="sobre-mi__img-wrap">
+            <img
+              src="img/img_luis/FOTO PERFIL.jpg"
+              alt="Foto Personal"
+              class="sobre-mi__img"
+            />
+          </div>
+
+   </div>
+      </section>
+
+      <!-- SECCION: Tarjetas de proyectos (id="tarjetas") -->
+      <section id="tarjetas" class="section tarjetas">
+        <p class="section__tag">// Proyectos</p>
+        <h2 class="section__title">Lo que estoy construyendo</h2>
+        <div class="tarjetas__grid">
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80"
+              alt="Proyecto To-Do App con HTML, CSS y JavaScript"
+              class="card__img"
+            />
+            <div class="card__body">
+              <span class="card__tag">HTML · CSS · JS</span>
+              <h3 class="card__title">To-Do App</h3>
+              <p class="card__desc">
+                Aplicación de lista de tareas , filtros por estado y diseño responsivo.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80"
+              alt="Proyecto Landing Page de portafolio personal"
+              class="card__img"
+            />
+            <div class="card__body">
+              <span class="card__tag">HTML · CSS</span>
+              <h3 class="card__title">Portafolio Personal</h3>
+              <p class="card__desc">
+                Este mismo sitio: una landing page semantica, responsiva y
+                accesible construida como practica formativa en el IFTS N°29.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80"
+              alt="Proyecto próximamente en desarrollo"
+              class="card__img"
+            />
+            <div class="card__body">
+              <span class="card__tag">En progreso</span>
+              <h3 class="card__title">Próximo Proyecto</h3>
+              <p class="card__desc">
+                Actualmente explorando JavaScript y sus posibilidades. ¡Pronto
+                habra novedades por aca!
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =============================================
+         SECCION: Habilidades (id="habilidades")
+         Mejora futura: Agregar barras de progreso animadas por cada habilidad
+        ============================================= -->
+      <section id="habilidades" class="section habilidades">
+        <p class="section__tag">// Stack</p>
+        <h2 class="section__title">Habilidades & Tecnologias</h2>
+        <div class="habilidades__tables">
+          <div class="habilidades__group">
+            <h3 class="habilidades__subtitle">Tecnologias que manejo</h3>
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Tecnologia</th>
+                  <th>Nivel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>HTML5</td>
+                  <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                  <td>CSS3</td>
+                  <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                  <td>Git & GitHub</td>
+                  <td>⭐⭐⭐</td>
+                </tr>
+                <tr>
+                  <td>JavaScript</td>
+                  <td>⭐⭐</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="habilidades__group">
+            <h3 class="habilidades__subtitle">Quiero aprender</h3>
+            <ul class="lista-skills">
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>Bases de datos (SQL / NoSQL)</li>
+              <li>TypeScript</li>
+              <li>Testing automatizado</li>
+            </ul>
+          </div>
+
+          <div class="habilidades__group">
+            <h3 class="habilidades__subtitle">Hobbies</h3>
+             <ul class="lista-skills lista-skills--hobbies">
+              <li>💻 Programacion</li>
+              <li>📚 Leer sobre tecnología</li>
+              <li>🎵 Escuchar musica</li>
+              <li>🍅 Huerta Sustentable</li>
+            </ul>
+          
+
+<!--  <ul>
+<li>
+  <span class="icono">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+      <polyline points="16 18 22 12 16 6"></polyline>
+      <polyline points="8 6 2 12 8 18"></polyline>
+    </svg>
+  </span>
+  Programacion
+</li>
+
+<li>
+  <span class="icono">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+      <path d="M2 4h15a3 3 0 0 1 3 3v13H5a3 3 0 0 0-3 3z"></path>
+      <path d="M22 6v14a2 2 0 0 1-2 2H5"></path>
+    </svg>
+  </span>
+  Leer sobre tecnología
+</li>
+
+<li>
+  <span class="icono">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </span>
+  Escuchar musica
+</li>
+
+<li>
+  <span class="icono">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+      <path d="M12 22V12"></path>
+      <path d="M5 12a7 7 0 0 1 14 0"></path>
+      <path d="M12 12c0-4-4-6-4-6s0 4 4 6z"></path>
+      <path d="M12 12c0-4 4-6 4-6s0 4-4 6z"></path>
+    </svg>
+  </span>
+  Huerta Sustentable
+</li>
+ -->
+</ul>          
+          
+          
+          </div>
+        </div>
+      </section>
+
+
+      <!-- =============================================
+         SECCION: Películas favoritas (id="peliculas")
+         Mejora futura: Conectar con la API de alguna base de datos de 
+         peliculas para traer datos en tiempo real
+        ============================================= -->
+      <section id="peliculas" class="section peliculas">
+        <p class="section__tag">// Cine</p>
+        <h2 class="section__title">3 peliculas favoritas ( hay muchas mas )</h2>
+        <div class="peliculas__grid">
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/blade_runner.jpg?w=400&q=80"
+                alt="Poster representativo de Blade Runner"
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">1982</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">Blade Runner</h3>
+              <p class="pelicula-card__desc">
+                 En un futuro distopico, Rick Deckard, un “blade runner”, debe retirar (eliminar) a replicantes rebeldes que se esconden entre humanos.
+                 Mientras los persigue, empieza a cuestionar que significa ser humano y si realmente hay diferencia entre ellos.
+                 La historia mezcla ciencia ficcion con dilemas eticos sobre la identidad, la memoria y la vida.
+              </p>
+            </div>
+          </article>
+
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/the_matrix.jpg"
+                alt="Poster representativo de Matrix"
+
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">1999</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">The Matrix</h3>
+              <p class="pelicula-card__desc">
+                La pelicula que redefinio la ciencia ficcion. Su reflexion sobre
+                la realidad y la tecnologia sigue siendo revolucionaria decadas
+                despues.
+              </p>
+            </div>
+          </article>
+
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/bastardos sin gloria.png"
+                alt="Póster representativo de Bastardos sin gloria ( peliculon !!)"
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">2009</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">Bastardos sin Gloria</h3>
+              <p class="pelicula-card__desc">
+                 En la Francia ocupada por los nazis, un escuadron secreto de soldados aliados siembra el terror entre las tropas alemanas.
+                 Al mismo tiempo, una joven dueña de cine trama una venganza contra la cupula nazi.
+                 Sus planes se cruzan en un explosivo acto que amenaza con cambiar el curso de la guerra.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+<!-- =============================================
+         SECCION: Musica favoritas (id="musica")
+         Mejora futura: Conectar con la API de alguna base de datos de 
+         peliculas para traer datos en tiempo real
+        ============================================= -->
+      <section id="musica" class="section musica">
+        <p class="section__tag">// Musica</p>
+        <h2 class="section__title">3 discos favoritos ( hay muchos mas )</h2>
+        <div class="peliculas__grid">
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/led_zeppelin_II.jpg"
+                alt="Portada Led Zeppelin II"
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">1969</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">Led Zeppelin II</h3>
+              <p class="pelicula-card__desc">
+                 Led Zeppelin II es ampliamente 
+                 considerado una obra maestra del hard rock 
+                 que consolidó el sonido pesado de la banda, 
+                 combinando blues, riffs contundentes y energía cruda.
+                 Aunque la crítica inicial de Rolling Stone fue 
+                 negativa, el álbum se convirtió en un éxito número uno,
+                destacando por "Whole Lotta Love" y "Ramble On".              </p>
+            </div>
+          </article>
+
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/Metallica_And Justice_for_All_frontal.jpg"
+                alt="Portada And Justice for All"
+
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">1988</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">And Justice for All</h3>
+              <p class="pelicula-card__desc">
+                 ...And Justice for All es aclamado como una obra 
+                 maestra del metal progresivo y técnico, destacando 
+                 por su complejidad musical y letras críticas.
+                 Aunque elogiado por composiciones feroces como "One" y
+                 "Blackened", el álbum es famoso por su producción cruda
+                 y la notable ausencia del bajo de Jason Newsted,
+                 un aspecto controvertido que ha generado opiniones
+                 divididas sobre la mezcla final.
+                </p>
+            </div>
+          </article>
+
+          <article class="pelicula-card">
+            <div class="pelicula-card__img-wrap">
+              <img
+                src="/img/img_luis/Black_Sabbath-Paranoid-Frontal.jpg"
+                alt="Portada de Paranoid"
+                class="pelicula-card__img"
+              />
+              <span class="pelicula-card__badge">1970</span>
+            </div>
+            <div class="pelicula-card__body">
+              <h3 class="pelicula-card__title">Paranoid</h3>
+              <p class="pelicula-card__desc">
+                 Paranoid de Black Sabbath es aclamado universalmente 
+                 como un pilar fundamental del heavy metal, definiendo
+                 el sonido del género con riffs pesados y oscuros.
+                 Canciones icónicas como "Paranoid", "Iron Man" y 
+                 "War Pigs" son elogiadas por su influencia, 
+                 producción cruda y letras sobre temas sociales y 
+                 psicológicos
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+
+      <!-- SECCION: Formulario de contacto (id="contacto") -->
+      <section id="contacto" class="section contacto">
+        <p class="section__tag">// Contacto</p>
+        <h2 class="section__title">Hablemos</h2>
+        <form class="form" action="#" method="POST">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="nombre" class="form__label">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                class="form__input"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="apellido" class="form__label">Apellido</label>
+              <input
+                type="text"
+                id="apellido"
+                name="apellido"
+                class="form__input"
+                placeholder="Tu apellido"
+                required
+              />
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="form__group">
+              <label for="email" class="form__label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form__input"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <label for="telefono" class="form__label">Telefono</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                class="form__input"
+                placeholder="+54 11 ..."
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            Enviar mensaje →
+          </button>
+        </form>
+      </section>
+
+
+    </main>
+
+    <!-- FOOTER: Pie de pagina con redes sociales -->
+    <footer class="footer">
+      <div class="footer__contenido">
+        <p class="footer__copyright">
+          &copy; 2026 Dev_IFTS29 · Hecho con 💙 y mucho CSS
+        </p>
+
+<!--         <div class="footer__links">
+          <a href="#" class="footer__link" aria-label="GitHub">GitHub</a>
+          <a href="#" class="footer__link" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" class="footer__link" aria-label="Twitter">Twitter</a>
+        </div>
+ -->
+        <div class="footer__links">
+          <a href="https://github.com/" class="footer__link" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              alt="GitHub"
+            />
+          </a>
+
+          <a href="https://linkedin.com/" class="footer__link" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+            />
+          </a>
+
+          <a href="https://twitter.com/" class="footer__link" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png"
+              alt="X"
+            
+              />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
