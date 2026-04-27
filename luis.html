@@ -13,7 +13,6 @@
       rel="stylesheet"
     />
   </head>
-  
   <body>
     <!-- =============================================
        HEADER: Encabezado principal con logo y nombre
@@ -31,6 +30,8 @@
            NAV: Barra de navegacion con 5 enlaces internos
            Mejora futura: convertir en menu hamburguesa para mobile
         ============================================= -->
+        <a href="index.html" class="btn-grupo">← Volver al grupo</a>
+
         <nav class="nav">
           <ul class="nav__list">
             <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
@@ -39,8 +40,6 @@
             <li><a href="#peliculas" class="nav__link">Peliculas</a></li>
             <li><a href="#musica"    class="nav__link">Musica</a></li>
             <li><a href="#contacto"  class="nav__link">Contacto</a></li>
-            <li><a href="index.html"    class="nav__link">Principal</a></li>
-          
           </ul>
         </nav>
       </div>
@@ -87,7 +86,9 @@
  -->
           <div class="sobre-mi__img-wrap">
             <img
-              src="img/img_luis/FOTO_PERFIL.jpg"  alt="Foto Personal"  class="sobre-mi__img"
+              src="img/img_luis/FOTO_PERFIL.jpg"
+              alt="Avatar generado con IA representando a Dev_IFTS29 (Yo)"
+              class="sobre-mi__img"
             />
           </div>
 
@@ -271,7 +272,7 @@
           <article class="pelicula-card">
             <div class="pelicula-card__img-wrap">
               <img
-                src="/img/img_luis/blade_runner.jpg?w=400&q=80"
+                src="/img/img_luis/blade_runner.jpg"
                 alt="Poster representativo de Blade Runner"
                 class="pelicula-card__img"
               />
@@ -511,8 +512,8 @@
         </div>
       </div>
     </footer>
-        <!-- Script principal — se carga al final para que el DOM ya esté listo -->
-    <script src="js/script_luis.js"></script>
 
+    <!-- Script principal — se carga al final para que el DOM ya esté listo -->
+    <script src="js/script_luis.js"></script>
   </body>
 </html>

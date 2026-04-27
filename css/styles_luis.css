@@ -587,32 +587,30 @@ h1, h2, h3 {
 
 
 /* ================================================================
-   MODAL DE YOUTUBE
+   MODAL DE YOUTUBE — Preview con miniatura (abre en nueva pestaña)
    ================================================================ */
 
-/* Fondo oscuro que cubre toda la pantalla */
 .yt-modal {
   display: none;
   position: fixed;
-  inset: 0;                          /* top/right/bottom/left = 0 */
+  inset: 0;
   background: rgba(0, 0, 0, 0.85);
   z-index: 1000;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  animation: fadeIn 0.25s ease;
 }
 .yt-modal--visible {
   display: flex;
+  animation: fadeIn 0.25s ease;
 }
 
-/* Caja del modal */
 .yt-modal__caja {
   background: var(--color-surface);
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.75rem;
   width: 100%;
-  max-width: 52rem;
+  max-width: 36rem;
   padding: 1.25rem;
   position: relative;
   animation: slideUp 0.3s ease;
@@ -623,7 +621,6 @@ h1, h2, h3 {
   to   { transform: translateY(0);    opacity: 1; }
 }
 
-/* Botón cerrar */
 .yt-modal__cerrar {
   position: absolute;
   top: 0.75rem;
@@ -641,38 +638,84 @@ h1, h2, h3 {
   justify-content: center;
   transition: background 0.2s;
 }
-.yt-modal__cerrar:hover {
-  background: var(--color-accent);
-}
+.yt-modal__cerrar:hover { background: var(--color-accent); color: white; }
 
-/* Título dentro del modal */
 .yt-modal__titulo {
   font-family: 'Syne', sans-serif;
   font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   padding-right: 2rem;
   color: var(--color-text);
 }
 
-/* Wrapper 16:9 para el iframe */
-.yt-modal__video-wrap {
+/* Contenedor de la miniatura — clickeable, va a YouTube */
+.yt-modal__preview {
+  display: block;
   position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* ratio 16:9 */
-  height: 0;
+  border-radius: 0.5rem;
   overflow: hidden;
-  border-radius: 0.4rem;
+  text-decoration: none;
+  cursor: pointer;
 }
-.yt-modal__iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.yt-modal__thumb {
+  display: block;
   width: 100%;
-  height: 100%;
-  border: none;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: filter 0.25s;
+}
+.yt-modal__preview:hover .yt-modal__thumb {
+  filter: brightness(0.55);
 }
 
-/* Botón "▶ Ver trailer" / "▶ Escuchar tema" */
+/* Overlay con botón play centrado */
+.yt-modal__play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(0,0,0,0.35);
+  transition: background 0.25s;
+}
+.yt-modal__preview:hover .yt-modal__play-overlay {
+  background: rgba(0,0,0,0.55);
+}
+.yt-modal__play-btn {
+  width: 4rem;
+  height: 4rem;
+  background: #ff0000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  padding-left: 4px; /* centra el triángulo visualmente */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+}
+.yt-modal__preview:hover .yt-modal__play-btn {
+  transform: scale(1.12);
+}
+.yt-modal__play-texto {
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.yt-modal__aviso {
+  margin-top: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Botón "▶ Ver trailer" / "▶ Escuchar tema" en cada card */
 .btn-video {
   display: inline-flex;
   align-items: center;
@@ -693,6 +736,125 @@ h1, h2, h3 {
   background: var(--color-accent-light);
   transform: scale(1.04);
 }
-.btn-video__icono {
-  font-size: 0.75rem;
+.btn-video__icono { font-size: 0.75rem; }
+
+
+/* ================================================================
+   NAVEGACIÓN SPA — SLIDE ENTRE SECCIONES
+   ================================================================ */
+
+/* El main necesita position relative para contener las secciones */
+.main {
+  position: relative;
+  overflow: hidden;     /* impide que las secciones que se van sean visibles */
+  min-height: calc(100vh - var(--header-height, 5rem));
+}
+
+/* Estado base de todas las secciones: ocultas fuera del viewport */
+.seccion {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100%;
+  /* Mantenemos el padding/spacing original de .section */
+}
+
+/* La sección activa ocupa el espacio y es visible */
+.seccion--activa {
+  display: block;
+  position: relative;   /* vuelve al flujo normal para que el footer quede abajo */
+  animation: none;
+}
+
+/* ── Animaciones de entrada ── */
+
+/* La sección nueva arranca desplazada y va a su lugar */
+@keyframes slideDesdeIzquierda {
+  from { transform: translateX(-100%); opacity: 0.4; }
+  to   { transform: translateX(0);     opacity: 1;   }
+}
+@keyframes slideDesdeDerecha {
+  from { transform: translateX(100%);  opacity: 0.4; }
+  to   { transform: translateX(0);     opacity: 1;   }
+}
+
+/* ── Animaciones de salida ── */
+
+/* La sección actual sale hacia la izquierda o derecha */
+@keyframes slideHaciaIzquierda {
+  from { transform: translateX(0);     opacity: 1;   }
+  to   { transform: translateX(-100%); opacity: 0.4; }
+}
+@keyframes slideHaciaDerecha {
+  from { transform: translateX(0);     opacity: 1;   }
+  to   { transform: translateX(100%);  opacity: 0.4; }
+}
+
+/* Estado "preparado para entrar" — posición inicial antes de animar */
+.seccion--desde-derecha  { transform: translateX(100%);  opacity: 0.4; }
+.seccion--desde-izquierda { transform: translateX(-100%); opacity: 0.4; }
+
+/* Clases de salida que aplica el JS */
+.seccion--saliendo-izquierda {
+  position: absolute;
+  inset: 0;
+  animation: slideHaciaIzquierda 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+.seccion--saliendo-derecha {
+  position: absolute;
+  inset: 0;
+  animation: slideHaciaDerecha 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+/* Cuando la sección activa ya no tiene clases de entrada, anima la llegada */
+.seccion--activa:not(.seccion--desde-derecha):not(.seccion--desde-izquierda):not(.seccion--entrando) {
+  animation: slideDesdeDerecha 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ── Botón "← Volver al inicio" ── */
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-volver:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateX(-3px);
+}
+
+
+/* ── Botón "← Volver al grupo" en el header ── */
+.btn-grupo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-grupo:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateX(-3px);
 }
