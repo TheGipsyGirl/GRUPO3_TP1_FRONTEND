@@ -858,3 +858,52 @@ h1, h2, h3 {
   color: var(--color-accent);
   transform: translateX(-3px);
 }
+
+
+/* ================================================================
+   SVG — ESTRELLAS DE NIVEL Y HOBBIES
+   ================================================================ */
+
+/* ── Estrellas ── */
+.estrellas {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.estrella {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.estrella--llena {
+  fill: #f59e0b;        /* ámbar cálido */
+  stroke: #d97706;
+  stroke-width: 1;
+}
+.estrella--vacia {
+  fill: transparent;
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+}
+/* Pequeña animación al pasar el mouse por la fila */
+tr:hover .estrella--llena {
+  transform: scale(1.15);
+  fill: #fbbf24;
+}
+
+/* ── Hobbies ── */
+.lista-skills--hobbies li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.hobby-icono {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+.lista-skills--hobbies li:hover .hobby-icono {
+  transform: scale(1.25) rotate(-5deg);
+}
