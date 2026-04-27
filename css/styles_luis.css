@@ -328,3 +328,371 @@ h1, h2, h3 {
   display: block;
   stroke: currentColor;
 }
+
+/* ================================================================
+   ESTILOS AGREGADOS POR JavaScript
+   ================================================================ */
+
+/* ── 1. Animación de entrada "Sobre mí" ── */
+.sobre-mi__content {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.sobre-mi__content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── 2. Flip de Cards de Proyectos ── */
+.card--flippable {
+  perspective: 1000px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.card--flippable:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+.card__flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card--flippable.flipped .card__flip-inner {
+  transform: rotateY(180deg);
+}
+.card__frente,
+.card__reverso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.card__frente {
+  background: var(--color-surface-2);
+  border: 0.0625rem solid var(--color-border);
+  box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.3);
+}
+.card__reverso {
+  background: var(--color-accent);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.5rem;
+  gap: 0.75rem;
+}
+.card__reverso-titulo {
+  font-size: 1.25rem;
+  color: white;
+}
+.card__reverso-detalle {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.card__reverso-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.card__reverso-tag {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.card__reverso-btn {
+  background: white;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.3125rem;
+  margin-top: auto;
+}
+.card__reverso-btn:hover {
+  background: rgba(255,255,255,0.85);
+}
+/* Indicador "click para girar" */
+.card--flippable .card__frente::after {
+  content: "Click para ver más ↩";
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* ── 3. Botón Me gusta ── */
+.btn-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-like:hover {
+  border-color: #e11d48;
+  color: #e11d48;
+}
+.btn-like--activo {
+  background: rgba(225, 29, 72, 0.12);
+  border-color: #e11d48;
+  color: #e11d48;
+  font-weight: 600;
+}
+.btn-like__icono {
+  font-size: 1rem;
+  line-height: 1;
+}
+@keyframes latido {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.4); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.btn-like--animar .btn-like__icono {
+  animation: latido 0.4s ease;
+}
+
+/* ── 4. Formulario — errores y éxito ── */
+.form__input--error {
+  border-color: #e11d48 !important;
+  outline: none;
+}
+.form__error {
+  color: #e11d48;
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+}
+.form__exito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1.5rem;
+  background: var(--color-surface);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.625rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+.form__exito-icono {
+  font-size: 2.5rem;
+}
+.form__exito-titulo {
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+.form__exito-texto {
+  color: var(--color-text-muted);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(1rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── 5. Menú Hamburguesa ── */
+.btn-hamburguesa {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: transparent;
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  padding: 0.35rem;
+}
+.btn-hamburguesa span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Animación X al abrirse */
+.btn-hamburguesa--activo span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.btn-hamburguesa--activo span:nth-child(2) {
+  opacity: 0;
+}
+.btn-hamburguesa--activo span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── 6. Scroll spy — link activo en nav ── */
+.nav__link--activo {
+  background-color: var(--color-accent);
+  color: white !important;
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 640px) {
+  .btn-hamburguesa {
+    display: flex;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 0.0625rem solid var(--color-border);
+    padding: 1rem;
+    z-index: 100;
+  }
+  .nav--abierto {
+    display: block;
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav__link {
+    display: block;
+    text-align: center;
+  }
+  .header {
+    position: relative;
+  }
+}
+
+
+/* ================================================================
+   MODAL DE YOUTUBE
+   ================================================================ */
+
+/* Fondo oscuro que cubre toda la pantalla */
+.yt-modal {
+  display: none;
+  position: fixed;
+  inset: 0;                          /* top/right/bottom/left = 0 */
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.25s ease;
+}
+.yt-modal--visible {
+  display: flex;
+}
+
+/* Caja del modal */
+.yt-modal__caja {
+  background: var(--color-surface);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 52rem;
+  padding: 1.25rem;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(2rem); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Botón cerrar */
+.yt-modal__cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--color-surface-2);
+  border: 0.0625rem solid var(--color-border);
+  color: var(--color-text);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.yt-modal__cerrar:hover {
+  background: var(--color-accent);
+}
+
+/* Título dentro del modal */
+.yt-modal__titulo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  padding-right: 2rem;
+  color: var(--color-text);
+}
+
+/* Wrapper 16:9 para el iframe */
+.yt-modal__video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+}
+.yt-modal__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Botón "▶ Ver trailer" / "▶ Escuchar tema" */
+.btn-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.45rem 1rem;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+.btn-video:hover {
+  background: var(--color-accent-light);
+  transform: scale(1.04);
+}
+.btn-video__icono {
+  font-size: 0.75rem;
+}
