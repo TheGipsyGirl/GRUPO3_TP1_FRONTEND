@@ -247,6 +247,39 @@ button:active {
   padding: 0 1rem 1rem;
   color: #666;
 }
+/* MÚSICA */
+.discos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.disco {
+  background-color: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.disco:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(102,126,234,0.3);
+}
+
+.disco img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.disco h3 {
+  color: #667eea;
+  margin: 0.5rem 0;
+}
+
 
 /* FOOTER */
 footer {
