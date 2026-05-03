@@ -11,3 +11,21 @@ toggleBtn.addEventListener("click", () => {
     toggleBtn.textContent = "Mostrar Discos";
   }
 });
+
+// Botón volver arriba
+const backToTopBtn = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
