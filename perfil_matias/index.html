@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio Personal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <!-- HEADER: Encabezado principal -->
+  <header>
+    <img src="img/logo.jpg" alt="Logo" id="logo">
+    <h1>Portfolio Personal Marcelo Matias Gonzalez</h1>
+  </header>
+
+  <!-- NAV: Barra de navegación -->
+  <nav>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://tp1-grupal-front.vercel.app/index.html">Volver al Grupo</a></li>
+      <li><a href="https://tp1-grupal-front.vercel.app/bitacora.html">Bitácora</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN: Contenido principal -->
+  <main>
+    <!-- SOBRE MI -->
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Buenos Aires - CABA- Tengo 43 Años.</p>
+      <p>Soy estudiante de Desarrollo Front End, apasionado por el diseño web y la creación de interfaces modernas. Mi misión es construir experiencias digitales claras, accesibles y atractivas.</p>
+      <img src="img/avatar.png" alt="Foto de perfil o avatar" width="200" height="200">
+    </section>
+
+    <!-- TARJETAS -->
+    <section id="proyectos">
+      <h2>Mis Proyectos</h2>
+      <div class="tarjetas-container">
+        <div class="tarjeta">
+          <img src="img/proyecto1.png" alt="Proyecto 1" width="360" height="220">
+          <p>Proyecto de landing page con HTML y CSS.</p>
+        </div>
+        <div class="tarjeta">
+          <img src="img/proyecto2.jpg" alt="Proyecto 2" width="360" height="220">
+          <p>Aplicación con React para gestión de tareas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>React y Node.js</li>
+        <li>Aprendiendo TypeScript</li>
+        <li>Hobbies: cine, música y videojuegos</li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form>
+        <label>Nombre: <input type="text" name="nombre"></label><br>
+        <label>Apellido: <input type="text" name="apellido"></label><br>
+        <label>Email: <input type="email" name="email"></label><br>
+        <label>Teléfono: <input type="tel" name="telefono"></label><br>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- PELÍCULAS -->
+    <section id="películas">
+      <h2>Mis Películas Favoritas</h2>
+      <div class="peliculas-container">
+        <div class="pelicula">
+          <img src="img/inception.jpg" alt="Inception">
+          <h3>Inception</h3>
+          <p>Una obra maestra de ciencia ficción que explora los sueños.</p>
+        </div>
+        <div class="pelicula">
+          <img src="img/matrix.jpg" alt="Matrix">
+          <h3>Matrix</h3>
+          <p>Revolucionó el cine con su visión del mundo digital.</p>
+        </div>
+        <div class="pelicula">
+          <img src="img/interestellar.jpg" alt="Interstellar">
+          <h3>Interstellar</h3>
+          <p>Un viaje épico a través del espacio y el tiempo.</p>
+        </div>
+      </div>
+    </section>
+    <!-- MÚSICA -->
+    <section id="musica">
+      <h2>Mis Discos Favoritos</h2>
+      <button id="toggle-musica">Mostrar/Ocultar Discos</button>
+      <div class="discos-container" style="display: none;">
+        <div class="disco">
+          <img src="img/despedazados.jpg" alt="Despedazados por mil partes - La Renga">
+          <h3>Despedazados por mil partes</h3>
+          <p>La Renga</p>
+        </div>
+        <div class="disco">
+          <img src="img/oktubre.jpg" alt="Oktubre - Los Redondos">
+          <h3>Oktubre</h3>
+          <p>Patricio Rey y sus Redonditos de Ricota</p>
+        </div>
+        <div class="disco">
+          <img src="img/sumo.jpg" alt="After Chabón - Sumo">
+          <h3>After Chabón</h3>
+          <p>Sumo</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="back-to-top" title="Volver arriba">↑</button>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 - Mi Portafolio | Sígueme en redes sociales</p>
+    <a href="#">Twitter</a> | <a href="#">GitHub</a>
+  </footer>
+
+  <!-- Comentarios en el código -->
+  <!-- HEADER: Aquí podría agregarse un logo en el futuro -->
+  <!-- NAV: Se puede mejorar con un menú hamburguesa para móviles -->
+  <!-- TARJETAS: Ideal agregar más proyectos y animaciones -->
+  <!-- CONTACTO: A futuro se puede conectar con un backend -->
+  <script src="js/javascript.js"></script>
+</body>
+</html>
